@@ -76,7 +76,6 @@ const BasicReflex = function () {
       scores.push(reactionTime);
       const sum = scores.reduce((partialSum, a) => partialSum + a, 0);
       averageScore = sum / scores.length;
-      console.log(averageScore);
       if (numOfTries < 5) {
         numOfTries++;
         if (numOfTries === 5) {
@@ -100,6 +99,7 @@ const BasicReflex = function () {
       turnGreenTimer = setTimeout(() => {
         body.style.backgroundColor = "rgb(50, 210, 70)";
         turnedGreen = Date.now();
+        document.querySelector("#wait-click-text").innerHTML = "CLICK NOW!";
       }, timer);
 
       isTiming = true;
@@ -127,7 +127,7 @@ const BasicReflex = function () {
         )}
         {clickedTooEarly && <p>Clicked too early!</p>}
         {isStarted && !clickedTooEarly && (
-          <p>WAIT FOR THE SCREEN TO TURN GREEN...</p>
+          <p id="wait-click-text">WAIT FOR THE SCREEN TO TURN GREEN...</p>
         )}
         {!isStarted &&
           !isShowingScore &&
