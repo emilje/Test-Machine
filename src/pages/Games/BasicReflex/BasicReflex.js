@@ -1,10 +1,10 @@
-import { useState, useRef, useCallback, Fragment } from "react";
+import { useState, useRef, useCallback, Fragment, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import "./BasicReflex.css";
 
 const body = document.body;
-const scores = [];
+let scores = [];
 let turnedGreen = null;
 let clicked;
 let isTiming = false;
@@ -20,6 +20,18 @@ const BasicReflex = function () {
   const [isShowingAverage, setIsShowingAverage] = useState(false);
   const bodyRef = useRef();
   let info = numOfTries <= 5 ? `${numOfTries}/5` : "Practice mode";
+
+  useEffect(() => {
+    return () => {
+      scores = [];
+      turnedGreen = null;
+      clicked = null;
+      isTiming = false;
+      turnGreenTimer = null;
+      numOfTries = 0;
+      averageScore = null;
+    };
+  }, []);
 
   const countdownFrom = function (maxTime) {
     const number = Math.floor(Math.random() * (maxTime - 3 + 1)) + 3;
@@ -119,11 +131,11 @@ const BasicReflex = function () {
               Math.floor(averageScore) - 3
             } ms !`}</p>
 
-            <p>Press to keep practicing.</p>
+            <p>Click to keep practicing.</p>
           </Fragment>
         )}
         {!isStarted && isShowingScore && !isShowingAverage && (
-          <p>{scores[scores.length - 1]} ms</p>
+          <p style={{ fontStyle: "italic" }}>{scores[scores.length - 1]} ms</p>
         )}
         {clickedTooEarly && <p>Clicked too early!</p>}
         {isStarted && !clickedTooEarly && (
