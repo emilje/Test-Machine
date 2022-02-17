@@ -110,7 +110,7 @@ const BasicReflex = function () {
   return (
     <Fragment>
       <button className="go-back-button" onClick={goBackHandler}>
-        🠔 Go back
+        Go back
       </button>
       <div ref={bodyRef} onClick={startGame} className="basic-game-container">
         {!isStarted && isShowingAverage && (
