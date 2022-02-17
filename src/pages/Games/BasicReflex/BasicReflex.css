@@ -1,0 +1,46 @@
+.basic-game-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.basic-game-container p {
+  user-select: none;
+  margin: 25px;
+  color: white;
+  font-size: 3vw;
+  font-weight: bold;
+  text-align: center;
+}
+
+.go-back-button {
+  user-select: none;
+  display: flex;
+  align-items: center;
+  padding-bottom: 9px;
+  justify-content: center;
+  position: absolute;
+  height: 50px;
+  width: 70px;
+  font-size: 50px;
+  top: 0;
+  left: 0;
+  margin: 20px 20px;
+  color: white;
+  background-color: rgb(20, 160, 255);
+  border: none;
+  box-shadow: 0 0 5px black;
+  border-radius: 15px;
+  transition: all 0.3s;
+}
+.go-back-button:hover {
+  background-color: rgb(20, 170, 255);
+  box-shadow: 0 0 7px black;
+  transform: scale(1.05);
+}
+.go-back-button:active {
+  transform: scale(0.95);
+}

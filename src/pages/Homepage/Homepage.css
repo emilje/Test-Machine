@@ -1,0 +1,64 @@
+.homepage-container {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  background-color: aliceblue;
+  width: 500px;
+  margin: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.title {
+  text-align: center;
+  font-size: 50px;
+  color: white;
+  margin-top: 50px;
+  width: fit-content;
+  margin: 70px auto;
+}
+
+.title-top {
+  margin-bottom: -25px;
+  padding: 0;
+}
+.title-bottom {
+  font-style: italic;
+  margin: 0;
+  font-size: 55px;
+  padding: 0;
+}
+
+span {
+  color: rgb(255, 72, 0);
+}
+
+.homepage-container p {
+  font-style: bold;
+  font-weight: 600;
+  font-size: 15px;
+  color: rgb(80, 60, 60);
+  margin: 15px;
+}
+
+.homepage-container button {
+  font-style: bold;
+  font-size: 15px;
+  font-weight: 600;
+  width: 220px;
+  height: 50px;
+  margin: 15px;
+  border-radius: 7px;
+  border: none;
+  background-color: rgb(20, 160, 255);
+  color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+  transition: all 0.3s;
+}
+.homepage-container button:hover {
+  background-color: rgb(20, 180, 255);
+  transform: scale(1.05);
+  text-shadow: 6px 6px 5px rgba(0, 0, 0, 0.7);
+}
