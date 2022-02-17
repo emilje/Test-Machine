@@ -44,3 +44,9 @@
 .go-back-button:active {
   transform: scale(0.95);
 }
+
+@media only screen and (max-width: 600px) {
+  .basic-game-container p {
+    font-size: 3vh;
+  }
+}

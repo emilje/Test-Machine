@@ -46,7 +46,7 @@ span {
   font-style: bold;
   font-size: 15px;
   font-weight: 600;
-  width: 220px;
+  width: 60%;
   height: 50px;
   margin: 15px;
   border-radius: 7px;
@@ -61,4 +61,10 @@ span {
   background-color: rgb(20, 180, 255);
   transform: scale(1.05);
   text-shadow: 6px 6px 5px rgba(0, 0, 0, 0.7);
+}
+
+@media only screen and (max-width: 600px) {
+  .homepage-container {
+    width: 80%;
+  }
 }
