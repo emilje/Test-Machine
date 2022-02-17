@@ -1,10 +1,16 @@
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import "./Homepage.css";
 
+const body = document.body;
+
 const Homepage = function () {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    body.style.overflow = "";
+  }, []);
 
   return (
     <Fragment>

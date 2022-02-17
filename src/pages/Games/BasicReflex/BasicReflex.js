@@ -22,6 +22,8 @@ const BasicReflex = function () {
   let info = numOfTries <= 5 ? `${numOfTries}/5` : "Practice mode";
 
   useEffect(() => {
+    body.style.overflow = "hidden";
+
     return () => {
       scores = [];
       turnedGreen = null;
