@@ -9,9 +9,12 @@ const Homepage = function () {
   return (
     <Fragment>
       <div className="title">
-        <p className="title-top">The Test</p>
+        <p className="title-top">Welcome to the</p>
         <p className="title-bottom">
-          Machine<span>!</span>
+          WEB LAB<span>!</span>
+        </p>
+        <p className="title-smallprint">
+          Where dreams probably don't come true.
         </p>
       </div>
       <div className="homepage-container">

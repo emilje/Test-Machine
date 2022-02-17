@@ -19,18 +19,18 @@
 .go-back-button {
   user-select: none;
   display: flex;
-  align-items: center;
-  padding-bottom: 9px;
-  justify-content: center;
+  justify-content: flex-start;
   position: absolute;
-  height: 50px;
-  width: 70px;
-  font-size: 50px;
+  height: fit-content;
+  width: fit-content;
+  padding-right: 13px;
+  font-size: 20px;
   top: 0;
   left: 0;
   margin: 20px 20px;
+
   color: white;
-  background-color: rgb(20, 160, 255);
+  background-color: rgb(20, 181, 255);
   border: none;
   box-shadow: 0 0 5px black;
   border-radius: 15px;
