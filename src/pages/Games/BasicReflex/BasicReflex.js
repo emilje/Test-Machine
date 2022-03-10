@@ -146,7 +146,7 @@ const BasicReflex = function () {
         {!isStarted &&
           !isShowingScore &&
           !clickedTooEarly &&
-          !isShowingAverage && <p>PRESS TO START</p>}
+          !isShowingAverage && <p>CLICK TO START</p>}
         {<p>{info}</p>}
       </div>
     </Fragment>

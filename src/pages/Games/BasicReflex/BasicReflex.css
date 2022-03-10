@@ -40,6 +40,7 @@
   background-color: rgb(20, 170, 255);
   box-shadow: 0 0 7px black;
   transform: scale(1.05);
+  cursor: pointer;
 }
 .go-back-button:active {
   transform: scale(0.95);

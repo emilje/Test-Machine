@@ -27,6 +27,9 @@ const Homepage = function () {
         <p>Welcome!</p>
         <p>Select one of the games below.</p>
         <button onClick={() => navigate("/basicgame")}>REACTION TIME.</button>
+        <button onClick={() => navigate("/aimreflex")}>
+          AIM REACTION TIME.
+        </button>
       </div>
     </Fragment>
   );

@@ -51,7 +51,8 @@ span {
   font-weight: 600;
   font-size: 15px;
   color: rgb(80, 60, 60);
-  margin: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .homepage-container button {
@@ -60,7 +61,8 @@ span {
   font-weight: 600;
   width: 60%;
   height: 50px;
-  margin: 15px;
+  margin-bottom: 15px;
+  margin-top: 0px;
   border-radius: 7px;
   border: none;
   background-color: rgb(20, 160, 255);

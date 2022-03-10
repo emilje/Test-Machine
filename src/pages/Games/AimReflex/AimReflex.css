@@ -1,0 +1,46 @@
+.aim-reflex-game-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.aim-reflex-game-container p {
+  user-select: none;
+  margin: 25px;
+  color: white;
+  font-size: 3vw;
+  font-weight: bold;
+  text-align: center;
+}
+
+.aim-target {
+  flex-direction: row;
+  width: 10vw;
+  height: 10vw;
+  background-color: white;
+  border-radius: 50%;
+  transform: translate(0vw, 0vh);
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+.aim-target-visible {
+  display: flex;
+}
+
+.aim-reflex-game-info {
+  position: absolute;
+  top: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .aim-reflex-game-container p {
+    font-size: 3vh;
+  }
+}
