@@ -18,13 +18,14 @@ const AimReflex = function () {
   const [isRunning, setIsRunning] = useState(false);
   const [isShowingScore, setIsShowingScore] = useState(false);
   const [isShowingAverage, setIsShowingAverage] = useState(false);
+  const targetElement = useRef();
+  const navigate = useNavigate();
 
   let info = numOfTries <= 5 ? `${numOfTries}/5` : "Practice mode";
 
   useEffect(() => {
     body.style.overflow = "hidden";
     return () => {
-      console.log("Unmounting");
       clearTimeout(turnVisibleTimer);
       turnVisibleTimer = null;
       scores = [];
@@ -35,8 +36,10 @@ const AimReflex = function () {
     };
   }, []);
 
-  const targetElement = useRef();
-  const navigate = useNavigate();
+  const countdownFrom = function (maxTime) {
+    const number = Math.floor(Math.random() * (maxTime - 3 + 1)) + 3;
+    return number * 1000;
+  };
 
   const calcNewPosition = function () {
     const plusMinusX = Math.random() < 0.5 ? 1 : -1;
@@ -46,17 +49,6 @@ const AimReflex = function () {
     const position = [positionX, positionY];
 
     return position;
-
-    // targetElement.current.style.transform = `translate(${positionX}vw,${positionY}vh)`;
-  };
-
-  const goBackHandler = function () {
-    navigate("/");
-  };
-
-  const countdownFrom = function (maxTime) {
-    const number = Math.floor(Math.random() * (maxTime - 3 + 1)) + 3;
-    return number * 1000;
   };
 
   const startGame = function () {
@@ -74,7 +66,6 @@ const AimReflex = function () {
       //     nextStep();
       //   }, timer + 150);
       turnVisibleTimer = setTimeout(() => {
-        console.log("TIMER RAN!");
         turnedVisible = Date.now();
         isTiming = true;
         setIsVisible(true);
@@ -91,36 +82,29 @@ const AimReflex = function () {
       scores.push(clicked - turnedVisible);
       const sum = scores.reduce((partialSum, a) => partialSum + a, 0);
       averageScore = sum / scores.length;
-      console.log(scores);
-      console.log(averageScore);
     }
   };
 
   const toggleStart = function () {
     setWelcomeScreen(false);
+    setIsShowingScore(false);
     setIsRunning(true);
+    setIsShowingAverage(false);
     startGame();
   };
 
   const nextStep = function (e) {
-    if (isShowingScore && !isShowingAverage) {
-      setIsShowingScore(false);
-      setIsRunning(true);
-      startGame();
-    } else if (!isRunning && !isShowingAverage) {
+    if (isShowingScore || !isRunning) {
       toggleStart();
     } else if (isShowingAverage) {
       numOfTries++;
-      setIsShowingScore(false);
-      setIsShowingAverage(false);
-      setIsRunning(true);
-      startGame();
+      toggleStart();
     }
   };
 
   return (
     <div className="aim-reflex-game-container" onClick={nextStep}>
-      <button className="go-back-button" onClick={goBackHandler}>
+      <button className="go-back-button" onClick={() => navigate("/")}>
         Go back
       </button>
       {welcomeScreen && <p>CLICK TO START!</p>}
