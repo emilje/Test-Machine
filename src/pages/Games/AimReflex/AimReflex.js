@@ -94,10 +94,10 @@ const AimReflex = function () {
   };
 
   const nextStep = function (e) {
-    if (isShowingScore || !isRunning) {
-      toggleStart();
-    } else if (isShowingAverage) {
+    if (isShowingAverage) {
       numOfTries++;
+      toggleStart();
+    } else if (isShowingScore || !isRunning) {
       toggleStart();
     }
   };
