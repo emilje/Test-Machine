@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Homepage from "./pages/Homepage/Homepage";
 // import BasicReflex from "./pages/Games/BasicReflex/BasicReflex";
 // import AimReflex from "./pages/Games/AimReflex/AimReflex";
+import SoundReflex from "./pages/Games/SoundReflex/SoundReflex";
 import React, { Suspense } from "react";
 
 const BasicReflex = React.lazy(() =>
@@ -30,6 +31,7 @@ function App() {
           </Suspense>
         }
       />
+      <Route path="soundreflex" element={<SoundReflex />} />
     </Routes>
   );
 }

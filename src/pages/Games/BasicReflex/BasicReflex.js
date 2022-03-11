@@ -53,7 +53,7 @@ const BasicReflex = function () {
     clearTimeout(turnGreenTimer);
     turnGreenTimer = null;
     turnedGreen = null;
-    body.style.backgroundColor = "rgb(52, 138, 207)";
+    body.style.backgroundColor = "rgb(50, 140, 205)";
   }, []);
 
   const startGame = function () {
@@ -63,13 +63,13 @@ const BasicReflex = function () {
       reset();
       clearTimeout(turnGreenTimer);
       turnGreenTimer = null;
-      body.style.backgroundColor = "rgb(52, 138, 207)";
+      body.style.backgroundColor = "rgb(50, 140, 205)";
       return;
     }
 
     if (isShowingScore) {
       reset();
-      body.style.backgroundColor = "rgb(52, 138, 207)";
+      body.style.backgroundColor = "rgb(50, 140, 205)";
       return;
     }
 
@@ -101,7 +101,7 @@ const BasicReflex = function () {
 
       reset();
       setIsShowingScore(true);
-      body.style.backgroundColor = "rgb(52, 138, 207)";
+      body.style.backgroundColor = "rgb(50, 140, 205)";
     } else if (!isTiming && !isShowingScore) {
       const timer = countdownFrom(3);
       // const timer = 100;

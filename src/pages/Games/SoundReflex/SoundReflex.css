@@ -1,0 +1,19 @@
+.sound-reflex-game-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.sound-reflex-game-container p {
+  user-select: none;
+  margin: 25px;
+  color: white;
+  font-size: 3vw;
+  font-weight: bold;
+  text-align: center;
+}

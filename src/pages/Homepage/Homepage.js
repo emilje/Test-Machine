@@ -9,6 +9,7 @@ const Homepage = function () {
   const navigate = useNavigate();
 
   useEffect(() => {
+    body.style.backgroundColor = "rgb(50, 140, 205)";
     body.style.overflow = "";
   }, []);
 
@@ -29,6 +30,9 @@ const Homepage = function () {
         <button onClick={() => navigate("/basicgame")}>REACTION TIME.</button>
         <button onClick={() => navigate("/aimreflex")}>
           AIM REACTION TIME.
+        </button>
+        <button onClick={() => navigate("/soundreflex")}>
+          SOUND REACTION TIME.
         </button>
       </div>
     </Fragment>
